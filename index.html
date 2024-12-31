@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: -webkit-radial-gradient(rgb(218, 190, 190),rgb(151, 190, 151),rgb(150, 150, 196));
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        fieldset{
+            border-radius: 25px;
+            width: 500px;
+            border: 5px solid black;
+        }
+        input:hover{
+            background-color: aqua;
+        }
+        INPUT[type="radio"]:checked{
+            size:6px;
+            height: 15px;
+            width: 15px;
+            color: blue;
+        }
+        input:required{
+            border: 2px solid rgb(236, 116, 144);
+            border-radius: 10px;
+        }
+        input:optional{
+            border: 3px dashed rgb(102, 148, 217);
+            border-radius: 6px;
+        }
+        select{
+            background-color: rgb(108, 73, 141);
+        }
+        p{
+            display: none;
+        }
+        input:hover + p{
+            display: inline;
+            color: rgb(227, 14, 14);
+        }
+        img{
+            display: none;
+        }
+        input.val:focus:valid ~ img.correct{
+            display: inline;
+            height: 15px;
+            width: 15px;
+        }
+        input.val:focus:invalid ~ img.wrong{
+            display: inline;
+            height: 15px;
+            width: 15px;
+        }
+        h1{
+            text-shadow: 2px 2px 8px #FF0000;
+        }
+        input.reset{
+            background-color: red;
+            border: 5px solid black;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <h1>Course Details</h1>
+    <form>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <table>
+                <tr>
+                    <td><label>First Name</label></td>
+                    <td><input type="text" name="Fname" required min="3" placeholder="Ex:Name">
+                        <p>Enter Your Name</p></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name</label></td>
+                    <td><input type="text" name="Lname" min="3" placeholder="Ex:Surname">
+                        <p>Enter Your Last Name</p></td>
+                </tr>
+                <tr>
+                    <td><label>Mobile Number</label></td>
+                    <td><input type="tel" name="Ph No" required placeholder="Ex:1234567890" min="10" max="10">
+                        <p>Enter Your Mobile Number</p></td>
+                </tr>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><input type="email" name="Mail" required placeholder="Ex:lee@gmail.com" class="val">
+                        <p>Enter Your Email-id</p>
+                        <img src="correct.jpg" class="correct">
+                        <img src="wrong.png" class="wrong">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Password</label></td>
+                    <td><input type="password" name="password" required>
+                        <p>Enter Your password</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Conform Password</label></td>
+                    <td><input type="password" name="Fname">
+                        <p>ReEnter Your Password</p></td>
+                </tr>
+                <tr>
+                    <td><label>DOB</label></td>
+                    <td><input type="date" name="DATE OF BIRTH" required>
+                        <p>Enter Your Date Of Birth</p></td>
+                </tr>
+                <tr>
+                    <td><label>Age</label></td>
+                    <td><input type="number" name="Age" required min="18" max="100" placeholder="Ex:22" class="val">
+                        <p>Enter Your Age</p>
+                        <img src="correct.jpg" class="correct">
+                        <img src="wrong.png" class="wrong"></td>
+                </tr>
+                <tr>
+                    <td><label>Gender</label></td>
+                    <td>
+                        <input type="radio" name="gender" value="Male"><label>Male</label>
+                        <input type="radio" name="gender" value="FeMale"><label>Female</label>
+                        <input type="radio" name="gender" value="Others"><label>Others</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select Country</td>
+                    <td><select>
+                            <option>INDIA</option>
+                            <option>USA</option>
+                            <option>Uk</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>upload Picture</label></td>
+                    <td><input type="file" name="pic"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" name="Reset" value="Reset" class="reset"></td>
+                </tr>
+                
+
+            </table>
+        </fieldset>
+        <fieldset><legend>Course Details</legend>
+            <table>
+            <tr>
+                <td>Select Course</td>
+                <td><select>
+                    <option>Java Full Stack</option>
+                    <option>Python Full Stack</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Delevery Mode</td>
+                <td><input type="radio"name="Mode" value="Online">
+                    <label>Online</label>
+                    <input type="radio" name="Mode" value="Ofline">
+                    <label>Ofline</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Institute Name</label></td>
+                <td><input type="text" name="Institute" placeholder="TapAcademy" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Comments</label></td>
+                <td><textarea></textarea></td>
+            </tr>
+            </table>
+        </fieldset><br>
+        <input style="background-color: red;border:5px solid black;" type="submit" required>
+    </form>
+</body>
+
+</html>
